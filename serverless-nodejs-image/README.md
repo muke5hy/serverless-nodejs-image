@@ -33,7 +33,7 @@ It will create `aws-lambda-image.zip` at project root. You can upload it.
 
 ### Configuration
 
-This works with `config.json` put on project root. There is `config.json.sample` as example. You can copy to use it.
+This works with `config.json` put on project root. There is `config.json` as example. You can copy to use it.
 
 ```bash
 $ cp config.json.sample config.json
