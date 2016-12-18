@@ -1,0 +1,33 @@
+{
+  "name": "serverless-nodejs-image",
+  "version": "0.0.1",
+  "description": "An AWS Lambda Function to resize/reduce images automatically",
+  "scripts": {
+      "test": "docker run -v \"$PWD\":/var/task lambci/lambda index.handler '{\"some\": \"event\"}'",
+      "postinstall": "[ -f config.json ] || cp config.json.sample config.json"
+    },
+    "keywords": [
+      "aws",
+      "lambda",
+      "image"
+    ],
+    "author": "Mukesh Yadav",
+    "license": "MIT",
+    "dependencies": {
+      "aws-sdk": "2.3.9",
+      "gm": "^1.23.0",
+      "lodash": "4.12.0"
+    },
+    "devDependencies": {
+      "chai": "^3.4.0",
+      "mocha": "^2.3.3",
+      "sinon": "^1.17.2"
+    },
+    "directories": {
+      "test": "tests"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/muke5hy/serverless-nodejs-image.git"
+    }
+}

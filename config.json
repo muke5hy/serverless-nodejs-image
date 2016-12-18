@@ -1,31 +1,40 @@
 {
-  "bucket": "your-destination-bucket",
-  "reduce": {
-      "directory": "./reduced",
-      "quality": 90
+  "bucket": "jbl-product-images-dev",
+  "acl":"public-read",
+  "backup": {
+    "directory": "./original"
   },
   "resizes": [
     {
-      "size": 300,
-      "directory": "./resized/small"
+      "size": "240x320^",
+      "directory": "./ldpi",
+      "format": "jpg"
     },
     {
-      "size": "600x600^",
-      "gravity": "Center",
+      "size": "320x480^",
       "crop": "600x600",
-      "directory": "./resized/cropped-to-square",
-			"orientation": true
+      "directory": "./mdpi",
+      "format": "jpg"
     },
     {
-      "size": 600,
-      "directory": "./resized/600-jpeg",
-      "format": "jpg",
-      "background": "white"
+      "size": "480x800^",
+      "directory": "./hdpi",
+      "format": "jpg"
     },
     {
-      "size": 900,
-      "directory": "./resized/large",
-      "quality": 90
+      "size": "720x1280^",
+      "directory": "./xhdpi",
+      "format": "jpg"
+    },
+    {
+      "size": "1080x1920^",
+      "directory": "./xxhdpi",
+      "format": "jpg"
+    },
+    {
+      "size": "1440x2560^",
+      "directory": "./xxxhdpi",
+      "format": "jpg"
     }
   ]
 }
