@@ -1,8 +1,4 @@
-## aws-lambda-image
-
-[![Build Status](https://travis-ci.org/ysugimoto/aws-lambda-image.svg?branch=master)](https://travis-ci.org/ysugimoto/aws-lambda-image)
-[![Code Climate](https://codeclimate.com/github/ysugimoto/aws-lambda-image/badges/gpa.svg)](https://codeclimate.com/github/ysugimoto/aws-lambda-image)
-[![npm version](https://badge.fury.io/js/aws-lambda-image.svg)](https://badge.fury.io/js/aws-lambda-image)
+## serverless-lambda-image
 
 An AWS Lambda Function to resize/reduce images automatically. When an image is put on AWS S3 bucket, this package will resize/reduce it and put to S3.
 
@@ -16,8 +12,8 @@ An AWS Lambda Function to resize/reduce images automatically. When an image is p
 Clone this repository and install dependencies:
 
 ```bash
-$ git clone git@github.com:ysugimoto/aws-lambda-image.git
-$ cd aws-lambda-image
+$ git clone git@github.com:mukeshy/serverless-lambda-image.git
+$ cd serverless-lambda-image
 $ npm install .
 ```
 
@@ -29,7 +25,7 @@ AWS Lambda accepts zip archived package. To create it, run `make lambda` task si
 $ make lambda
 ```
 
-It will create `aws-lambda-image.zip` at project root. You can upload it.
+It will create `serverless-lambda-image.zip` at project root. You can upload it.
 
 ### Configuration
 
