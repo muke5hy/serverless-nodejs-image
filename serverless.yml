@@ -15,6 +15,7 @@ provider:
         Resource:
           - { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ]]}
           - "arn:aws:s3:::jbl-product-images-dev/*"
+          - "arn:aws:s3:::jbl-product-images-resized-dev/*"
 
 
 package:
@@ -34,12 +35,17 @@ functions:
           bucket: jbl-product-images-dev
           event: s3:ObjectCreated:*
           rules:
-            - prefix: product/uploads/
+            - prefix: product/
       - s3:
           bucket: jbl-product-images-dev
           event: s3:ObjectCreated:*
           rules:
-            - prefix: category/uploads/
+            - prefix: category_icons/
+      - s3:
+          bucket: jbl-product-images-dev
+          event: s3:ObjectCreated:*
+          rules:
+            - prefix: retailer_landing/
 
 
 # you can add CloudFormation resource templates here

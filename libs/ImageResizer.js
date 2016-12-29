@@ -31,7 +31,13 @@ class ImageResizer {
         return new Promise((resolve, reject) => {
             console.log("Resizing to: " + (this.options.directory || "in-place"));
 
-            var img = gm(image.data).geometry(this.options.size.toString());
+            var size_ratio_base = this.options.size_ratio_base
+            var size_ratio = this.options.size_ratio
+            var size = (size_ratio / size_ratio_base) * 100 + '%'
+            console.log("Size to resize "+size)
+            console.log("Size to resize "+size)
+            var img = gm(image.data).geometry(size);
+
             if ( "orientation" in this.options ) {
                 img = img.autoOrient();
             }

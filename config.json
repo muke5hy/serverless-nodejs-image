@@ -1,40 +1,35 @@
 {
-  "bucket": "jbl-product-images-dev",
+  "bucket": "jbl-product-images-resized-dev",
   "acl":"public-read",
+  "size_ratio_base": 4.0,
+  "base_size": "125x120",
   "backup": {
     "directory": "./original"
   },
   "resizes": [
     {
-      "size": "240x320^",
-      "directory": "./ldpi",
-      "format": "jpg"
+      "size_ratio": 0.75,
+      "directory": "./ldpi"
     },
     {
-      "size": "320x480^",
-      "crop": "600x600",
-      "directory": "./mdpi",
-      "format": "jpg"
+      "size_ratio": 1.0,
+      "directory": "./mdpi"
     },
     {
-      "size": "480x800^",
-      "directory": "./hdpi",
-      "format": "jpg"
+      "size_ratio": 1.5,
+      "directory": "./hdpi"
     },
     {
-      "size": "720x1280^",
-      "directory": "./xhdpi",
-      "format": "jpg"
+      "size_ratio": 2.0,
+      "directory": "./xhdpi"
     },
     {
-      "size": "1080x1920^",
-      "directory": "./xxhdpi",
-      "format": "jpg"
+      "size_ratio": 3.0,
+      "directory": "./xxhdpi"
     },
     {
-      "size": "1440x2560^",
-      "directory": "./xxxhdpi",
-      "format": "jpg"
+      "size_ratio": 4.0,
+      "directory": "./xxxhdpi"
     }
   ]
 }

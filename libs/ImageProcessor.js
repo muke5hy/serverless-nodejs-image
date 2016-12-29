@@ -72,7 +72,7 @@ class ImageProcessor {
         }
 
         config.get("resizes", []).filter((option) => {
-            return option.size &&
+            return option.size_ratio &&
                 imageData.fileName.indexOf(option.directory) !== 0 // don't process images in the output folder
         }).forEach((option) => {
             if ( ! option.bucket ) {
@@ -80,6 +80,9 @@ class ImageProcessor {
             }
             if ( ! option.acl ){
                 option.acl = config.get("acl");
+            }
+            if ( ! option.size_ratio_base ){
+                option.size_ratio_base = config.get("size_ratio_base");
             }
             option.jpegOptimizer = option.jpegOptimizer || jpegOptimizer;
             promise = promise.then(() => this.execResizeImage(option, imageData).then(S3.putObject));
